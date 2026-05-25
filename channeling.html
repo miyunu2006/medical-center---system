@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channeling - Wound Care & Medical Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span>📞 075 606 1056</span>
+            <span>✉️ hwawickramarachchi@gmail.com</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.svg" alt="Wound Care Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="channeling.html" class="active">Channeling</a></li>
+            <li><a href="pharmacy.html">Pharmacy</a></li>
+        </ul>
+    </nav>
+
+    <!-- Channeling Container -->
+    <section class="channeling-section">
+        <div class="channeling-box">
+            <h2>Online Channeling Portal</h2>
+            <p class="subtitle">Consultations and procedures exclusively managed by Dr. Amarasiri Wickramarachchi</p>
+            
+            <!-- Step 1: Mobile Login -->
+            <div id="login-step">
+                <div class="input-group">
+                    <label>Enter Mobile Number to Access Booking</label>
+                    <input type="text" id="mobile-number" placeholder="e.g. 0756061056" autocomplete="off">
+                    <span id="error-msg" class="error">Please enter a valid mobile number (at least 9 digits).</span>
+                </div>
+                <button class="btn-primary full-width" onclick="verifyMobile()">Login with Mobile Number</button>
+            </div>
+
+            <!-- Step 2: Booking Form -->
+            <div id="booking-step" style="display: none;">
+                <div class="success-alert">Securely Verified! Please fill out patient details.</div>
+                <form id="booking-form">
+                    <div class="input-group">
+                        <label>Patient Full Name</label>
+                        <input type="text" id="patient-name" placeholder="Enter patient's name" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Required Treatment / Category</label>
+                        <select id="appointment-type" required>
+                            <option value="">-- Select Required Category --</option>
+                            <option value="wound">Specialized Wound Care (තුවාල වලට බෙහෙත් දැමීම සහ ප්‍රතිකාර)</option>
+                            <option value="surgery">Minor Surgery (සුළු සැත්කම් සහ කුඩා ශල්‍යකර්ම)</option>
+                            <option value="general">General Medicine (සාමාන්‍ය ලෙඩ රෝග සඳහා ප්‍රතිකාර)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Preferred Appointment Date</label>
+                        <input type="date" id="appointment-date" required>
+                    </div>
+
+                    <div class="info-note">
+                        📌 Note: No online payments required. All consultation and dressing fees are collected at the dispensary counter.
+                    </div>
+
+                    <button type="button" class="btn-primary full-width" onclick="submitAppointment()">Confirm Appointment Slot</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Wound Care & Medical Center | Founded by Dr. Amarasiri Wickramarachchi</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

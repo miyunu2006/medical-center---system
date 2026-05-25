@@ -1,0 +1,196 @@
+/* Premium Medical Theme Color Palette */
+:root {
+    --primary-color: #0077b6; 
+    --secondary-color: #00b4d8; 
+    --accent-color: #90e0ef; 
+    --bg-color: #f8f9fa; 
+    --text-dark: #2b2d42;
+    --text-light: #6c757d;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.bg-light { background-color: #eaf4f4; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Top Bar Styling */
+.top-bar {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 10px 0;
+    font-size: 0.88rem;
+    font-weight: 400;
+    box-shadow: inset 0 -2px 5px rgba(0,0,0,0.05);
+}
+.top-bar-content {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+}
+@media(max-width: 768px){
+    .top-bar-content { flex-direction: column; align-items: center; gap: 5px; text-align: center; }
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    padding: 12px 5%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo-img {
+    height: 55px;
+    display: block;
+}
+
+.nav-links { display: flex; list-style: none; gap: 35px; }
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
+
+/* Buttons & Interactive Elements */
+.btn-primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 13px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 119, 182, 0.2);
+    transition: background 0.3s, transform 0.2s;
+}
+.btn-primary:hover { background: #023e8a; transform: translateY(-2px); }
+
+.btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: var(--primary-color);
+    padding: 13px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+.btn-secondary:hover { background: var(--primary-color); color: var(--white); }
+.full-width { width: 100%; font-size: 1.05rem; }
+
+/* Hero Section */
+.hero {
+    height: 75vh;
+    background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80') center/cover;
+    position: relative;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0.96), rgba(255,255,255,0.65));
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+.hero-content { max-width: 680px; }
+.hero-content h1 { font-size: 3.4rem; color: var(--primary-color); line-height: 1.2; margin-bottom: 20px; font-weight: 700; }
+.hero-content p { font-size: 1.15rem; color: var(--text-light); margin-bottom: 35px; }
+.hero-buttons { display: flex; gap: 20px; }
+
+/* Section Layouts */
+.about-section { padding: 90px 0; background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.about-image img { width: 100%; border-radius: 15px; box-shadow: 0 12px 35px rgba(0,0,0,0.08); }
+.about-text h2 { color: var(--secondary-color); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+.doctor-name { font-size: 2.4rem; color: var(--primary-color); margin-bottom: 20px; font-weight: 700; }
+.about-text p { margin-bottom: 18px; color: var(--text-light); font-size: 1.08rem; }
+
+/* Services Layout */
+.services-section { padding: 90px 0; }
+.section-title { text-align: center; font-size: 2.6rem; color: var(--primary-color); margin-bottom: 50px; font-weight: 700; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; }
+.service-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+.service-card img { width: 100%; height: 230px; object-fit: cover; }
+.card-content { padding: 30px; text-align: center; }
+.card-content h3 { color: var(--primary-color); margin-bottom: 15px; font-size: 1.4rem; font-weight: 600; }
+.card-content p { font-size: 0.98rem; color: var(--text-light); }
+
+/* Gallery Section */
+.gallery-section { padding: 90px 0; }
+.gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.gallery-item { background: var(--white); padding: 15px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.04); text-align: center; }
+.gallery-item img { width: 100%; height: 380px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; border: 1px solid #eee; }
+.gallery-item p { font-weight: 600; color: var(--primary-color); font-size: 1.1rem; }
+
+/* Contact & Maps Layout */
+.contact-section { padding: 90px 0; background: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.contact-info h2 { color: var(--primary-color); font-size: 2.4rem; margin-bottom: 15px; font-weight: 700; }
+.contact-list { list-style: none; margin: 30px 0; }
+.contact-list li { margin-bottom: 18px; font-size: 1.1rem; color: var(--text-dark); }
+
+/* Channeling Portal Page */
+.channeling-section { padding: 90px 20px; min-height: 75vh; display: flex; justify-content: center; align-items: center; }
+.channeling-box { background: var(--white); padding: 50px; border-radius: 20px; width: 100%; max-width: 520px; box-shadow: 0 15px 45px rgba(0,0,0,0.07); }
+.channeling-box h2 { text-align: center; color: var(--primary-color); margin-bottom: 10px; font-weight: 700; }
+.subtitle { text-align: center; color: var(--text-light); margin-bottom: 35px; font-size: 0.95rem; }
+.input-group { margin-bottom: 25px; }
+.input-group label { display: block; font-weight: 500; margin-bottom: 8px; color: var(--text-dark); }
+.input-group input, .input-group select { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s; }
+.input-group input:focus, .input-group select:focus { border-color: var(--primary-color); outline: none; }
+.error { color: #e63946; font-size: 0.88rem; display: none; margin-top: 6px; font-weight: 500; }
+.success-alert { background: #d8f3dc; color: #1b4332; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 25px; font-weight: 500; }
+.info-note { font-size: 0.88rem; color: #e63946; margin-bottom: 25px; text-align: center; background: #fff0f3; padding: 12px; border-radius: 6px; border-left: 4px solid #e63946; }
+
+/* Pharmacy Layout */
+.page-header { height: 35vh; position: relative; }
+.pharmacy-bg { background: url('https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=1920&q=80') center/cover; }
+.overlay { background: rgba(0, 119, 182, 0.75); width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+.overlay h1 { color: var(--white); font-size: 2.8rem; font-weight: 700; text-shadow: 0 2px 12px rgba(0,0,0,0.2); }
+.pharmacy-details { padding: 90px 0; }
+.pharmacy-card { display: flex; gap: 60px; background: var(--white); padding: 45px; border-radius: 20px; box-shadow: 0 12px 35px rgba(0,0,0,0.04); align-items: center; }
+.pharmacy-card img { width: 45%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+.pharmacy-text h2 { color: var(--primary-color); margin-bottom: 20px; font-size: 2rem; font-weight: 700; }
+.pharmacy-features { list-style: none; margin: 25px 0; }
+.pharmacy-features li { margin-bottom: 12px; color: var(--text-dark); font-weight: 500; }
+.notice-box { background: #fff3cd; color: #856404; padding: 22px; border-left: 5px solid #ffc107; border-radius: 6px; margin-top: 25px; font-size: 0.95rem; }
+
+/* Footer */
+footer { background: var(--text-dark); color: var(--white); text-align: center; padding: 30px; font-size: 0.92rem; font-weight: 300; }
+
+/* Global Responsive Breakdown */
+@media(max-width: 992px) {
+    .about-grid, .services-grid, .gallery-grid, .contact-grid, .pharmacy-card { grid-template-columns: 1fr; gap: 40px; }
+    .pharmacy-card { flex-direction: column; }
+    .pharmacy-card img { width: 100%; }
+    .hero-content h1 { font-size: 2.6rem; }
+}
